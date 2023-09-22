@@ -1,0 +1,145 @@
+/* styles.css 
+body {
+    max-height: 100vh; /* Establece una altura máxima igual a la altura de la ventana (viewport)
+    overflow-y: auto; /* Agrega una barra de desplazamiento vertical si es necesario
+
+    max-width: 800px; /* Establece el ancho máximo del body 
+    margin: 0 auto; /* Margen automático izquierdo y derecho para centrar el contenido
+    padding: 20px; /* Agrega un relleno opcional alrededor del contenido
+*/
+/* Estilo para el encabezado h1 */
+h1 {
+    text-align: center;
+    color: #333;
+    /* Color del texto */
+    padding: 15px;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    /* Asegura que la imagen no se desborde del contenedor */
+}
+
+/* styles.css */
+ul {
+    text-align: center;
+    /* Alinea el texto de la lista en el centro */
+    padding: 0;
+    /* Quita el espacio de relleno predeterminado de la lista */
+    list-style-type: none;
+    /* Quita los marcadores de lista (puntos) */
+}
+
+li {
+    text-align: left;
+    /* Restaura la alineación del texto a la izquierda dentro de los elementos li */
+    margin: 0;
+    /* Elimina cualquier margen predeterminado de los elementos li */
+    padding: 10px 0;
+    /* Añade un espacio vertical entre los elementos li */
+
+}
+
+.card-img-top {
+    width: 300px;
+    height: 200px;
+}
+
+.text-start {
+    padding: 15px;
+}
+
+.card {
+    transition: transform 0.5s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    /* Levanta la tarjeta 10 píxeles hacia arriba */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    /* Agrega una sombra suave */
+}
+
+a {
+    text-decoration: none;
+    /* Quita la línea subrayada */
+    color: #007BFF;
+    /* Establece el color del texto del enlace (puede ser el color que desees) */
+}
+
+/* Estilo personalizado para los enlaces en estado "hover" (cuando el mouse pasa sobre ellos) */
+a:hover {
+    text-decoration: none;
+    /* Quita la línea subrayada en el estado "hover" */
+    color: #0056b3;
+    /* Cambia el color del texto al pasar el cursor (puede ser el color que desees) */
+}
+
+/* Estilos para el footer */
+footer {
+    background-color: #333;
+    /* Color de fondo del footer */
+    color: #fff;
+    /* Color del texto del footer */
+    padding: 20px 0 20px;
+    /* Espaciado interior (arriba y abajo) del footer */
+    text-align: center;
+    /* Centra el texto del footer */
+}
+
+.text-center {
+    padding: 20px;
+}
+
+/* Estilos para ocultar la opción por defecto */
+.option {
+    display: none;
+}
+
+/* Estilos para mostrar la opción al pasar el cursor */
+.card:hover .option {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para el botón */
+.receta {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Estilos para el botón en estado "hover" */
+.receta:hover {
+    background-color: #0056b3;
+}
+
+/**/
+.accordion {
+    display: none;
+}
+
+.card:hover .accordion {
+    display: block;
+}
+
+.about {
+    max-width: 800px;
+    /* Limita el ancho del contenido para facilitar la lectura */
+    margin: 0 auto;
+    /* Centra el contenido en la página */
+}
+
+.about-p {
+    text-align: justify;
+    /* Justifica el texto para un aspecto más limpio */
+    margin-bottom: 20px;
+    /* Agrega un espacio inferior entre párrafos */
+    
+}

@@ -1,0 +1,16 @@
+1.- A partir del lado de un cuadrado, calcular su área y su perímetro.
+2.- A partir del radio de un círculo, calcular su área y su perímetro.
+3.- A partir de los lados de un rectángulo, calcular su área y su perímetro.
+4.- A partir del lado de un cubo, calcular su área, su perímetro y su volúmen.
+5.- A partir del radio de una esfera, calcular su área, su perímetro y su volúmen.
+6.- A partir de la base y la altura de un triángulo, calcular su área y su perímetro.
+7.- Conversión de grados Celsius a Fahrenheit: a partir de un valor en Celsius, retornar el valor en Fahrenheit.
+8.- Conversión de grados Celsius a Kelvin: a partir de un valor en Celsius, retornar el valor en Kelvin.
+9.- Conversión de grados Kelvin a Fahrenheit: a partir de un valor en Kelvin, retornar el valor en Fahrenheit.
+10.- Conversión de grados Kelvin a Celsius: a partir de un valor en Kelvin, retornar el valor en Celsius.
+11.- Conversión de grados Fahrenheit a Celsius: a partir de un valor en Fahrenheit, retornar el valor en Celsius.
+12.- Conversión de grados Fahrenheit a Kelvin: a partir de un valor en Fahrenheit, retornar el valor en Kelvin.
+13.- Calculadora de Factorial: Solicita un número entero al usuario y calcula su factorial (n!).
+Muestra el resultado en la consola.
+14.- Adivinanza de Número Aleatorio: Generar un número aleatorio entre 1 y 100 y desafiar al usuario a adivinarlo. 
+Se deben proporcionar pistas de "más alto" o "más bajo" hasta que lo adivinen.
