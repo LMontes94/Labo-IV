@@ -1,3 +1,31 @@
-#ejercicio2, #ejercicio3, #ejercicio4, #ejercicio5, #ejercicio6, #ejercicio7{
-    display: none;
+#ejercicio2,
+#ejercicio3,
+#ejercicio4,
+#ejercicio5,
+#ejercicio6,
+#ejercicio7 {
+  display: none;
+  margin: 30px;
+}
+
+.title {
+  margin: 30px;
+  text-align: center;
+}
+
+#ejercicio1 {
+  margin: 40px;
+}
+
+.btn {
+  margin: 15px;
+}
+
+.lbl1 {
+  margin: 12px;
+}
+
+label,
+.lbl2 {
+  margin: 8px;
 }

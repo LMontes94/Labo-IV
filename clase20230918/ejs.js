@@ -1,27 +1,46 @@
-function calcular(){
-     
+import { Cuadrado, figuras } from './clases/figuras';
+
+function calcular() {
+    const figura = document.getElementById("figura").value
+    switch (figura) {
+        case 'cuadrado':
+
+            break;
+        case 'circulo':
+            break;
+        case 'rectangulo':
+            break;
+        case 'cubo':
+            break;
+        case 'esfera':
+            break;
+        case 'triangulo':
+            break;
+        default:
+            break;
+    }
     const lado = document.getElementById("lado").value;
     const perimetro = lado * 4;
     const area = lado * lado;
 
     // Formatear resultado 
-       let resultado = "<ul>\n";
-       resultado += `<li> Perimetro: ${perimetro}</li>\n`;
-       resultado += `<li> Area: ${area}</li>\n`;
-       resultado += "</ul>";
+    let resultado = "<ul>\n";
+    resultado += `<li> Perimetro: ${perimetro}</li>\n`;
+    resultado += `<li> Area: ${area}</li>\n`;
+    resultado += "</ul>";
 
     // mostrar resultado 
-      document.getElementById("resultado").innerHTML = resultado;
+    document.getElementById("resultado").innerHTML = resultado;
 }
 
-function siguiente(numActual){
+function siguiente(numActual) {
     console.log(numActual);
     document.getElementById(`ejercicio${numActual}`).style.display = "none";
     const numSiguiente = numActual + 1;
     document.getElementById(`ejercicio${numSiguiente}`).style.display = "block";
 }
 
-function anterior(numActual){
+function anterior(numActual) {
     document.getElementById(`ejercicio${numActual}`).style.display = "none";
     const numAnterior = numActual - 1;
     document.getElementById(`ejercicio${numAnterior}`).style.display = "block";
