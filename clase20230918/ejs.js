@@ -1,28 +1,38 @@
-import { Cuadrado, figuras } from './clases/figuras';
+//import { Cuadrado, figuras } from './clases/figuras';
 
-function calcular() {
-    const figura = document.getElementById("figura").value
-    switch (figura) {
-        case 'cuadrado':
+function calcular(valorFigura) {
 
+    let perimetro;
+    let area;
+ 
+    switch (valorFigura) {
+        case 1:            
+            const lado = document.getElementById("lado-cuadrado").value;
+            perimetro = lado * 4;
+            area = lado * lado;
             break;
-        case 'circulo':
+        case 2:
+            const radio = document.getElementById("radio-circulo").value;
+            console.log(radio)
+            perimetro = 2 * Math.PI * radio;
+            console.log(perimetro)
+            area = Math.PI * (radio * radio);
             break;
-        case 'rectangulo':
+        case 3:
+            const base = document.getElementById("base-rectangulo").value;
+            const altura = document.getElementById("altura-rectangulo").value;
+            perimetro = base * 2 + altura * 2;
+            area = base * altura;
             break;
-        case 'cubo':
+        case 4:
             break;
-        case 'esfera':
+        case 5:
             break;
-        case 'triangulo':
+        case 6:
             break;
         default:
             break;
     }
-    const lado = document.getElementById("lado").value;
-    const perimetro = lado * 4;
-    const area = lado * lado;
-
     // Formatear resultado 
     let resultado = "<ul>\n";
     resultado += `<li> Perimetro: ${perimetro}</li>\n`;
