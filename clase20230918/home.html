@@ -17,22 +17,24 @@
         <div id="ejercicio1" class="card text-white bg-primary mb-3" style="max-width: 20rem;">
             <div class="card-header">Ejercicio 1</div>
             <div class="card-body">
-                <p class="card-text">1.- A partir del lado de un <span class="figura">cuadrado</span>, calcular su área y
+                <p class="card-text">1.- A partir del lado de un <span class="figura">cuadrado</span>, calcular su área
+                    y
                     su perímetro.
                 </p>
                 <label for="">Lado: </label><input type="number" id="lado-cuadrado">
                 <button type="button" class="btn btn-light" onclick="calcular(1)">Calcular</button>
-                <span id="resultado"></span>
+                <span id="resultado1"></span>
                 <button type="button" class="btn btn-light" onclick="siguiente(1)">Siguiente</button>
             </div>
         </div>
         <div id="ejercicio2" class="card text-white bg-primary mb-3" style="max-width: 25rem;">
             <div class="card-header">Ejercicio 2</div>
             <div class="card-body">
-                <p class="card-text">2.- A partir del radio de un <span class="figura">círculo</span>, calcular su área y su perímetro.</p>
+                <p class="card-text">2.- A partir del radio de un <span class="figura">círculo</span>, calcular su área
+                    y su perímetro.</p>
                 <label for="">Radio: </label><input type="number" id="radio-circulo">
                 <button type="button" class="btn btn-light" onclick="calcular(2)">Calcular</button>
-                <span id="resultado"></span>
+                <span id="resultado2"></span>
                 <div class="btn-container d-flex justify-content-between">
                     <button type="button" class="btn btn-light" onclick="anterior(2)">Anterior</button>
                     <button type="button" class="btn btn-light" onclick="siguiente(2)">Siguiente</button>
@@ -42,13 +44,14 @@
         <div id="ejercicio3" class="card text-white bg-primary mb-3" style="max-width: 20rem;">
             <div class="card-header">Ejercicio 3</div>
             <div class="card-body">
-                <p class="card-text">3.- A partir de los lados de un <span class="circulo">rectángulo</span>, calcular su área y su perímetro.</p>
+                <p class="card-text">3.- A partir de los lados de un <span class="circulo">rectángulo</span>, calcular
+                    su área y su perímetro.</p>
                 <label class="lbl1">Base: </label><input type="number" id="base-rectangulo">
                 <label class="lbl2">Altura: </label><input type="number" id="altura-rectangulo">
                 <div class="container-md d-flex justify-content-end">
                     <button type="button" class="btn btn-light" onclick="calcular(3)">Calcular</button>
                 </div>
-                <span id="resultado"></span>
+                <span id="resultado3"></span>
                 <div class="btn-container d-flex justify-content-between">
                     <button type="button" class="btn btn-light" onclick="anterior(3)">Anterior</button>
                     <button type="button" class="btn btn-light" onclick="siguiente(3)">Siguiente</button>
@@ -58,12 +61,13 @@
         <div id="ejercicio4" class="card text-white bg-primary mb-3" style="max-width: 20rem;">
             <div class="card-header">Ejercicio 4</div>
             <div class="card-body">
-                <p class="card-text">4.- A partir del lado de un <span class="figura">cubo</span>, calcular su área y su volúmen.</p>
-                <label>Lado: </label><input type="number" id="base">
+                <p class="card-text">4.- A partir del lado de un <span class="figura">cubo</span>, calcular su área y su
+                    volúmen.</p>
+                <label>Lado: </label><input type="number" id="lado-cubo">
                 <div class="container-md d-flex justify-content-end">
                     <button type="button" class="btn btn-light" onclick="calcular(4)">Calcular</button>
                 </div>
-                <span id="resultado"></span>
+                <span id="resultado4"></span>
                 <div class="btn-container d-flex justify-content-between">
                     <button type="button" class="btn btn-light" onclick="anterior(4)">Anterior</button>
                     <button type="button" class="btn btn-light" onclick="siguiente(4)">Siguiente</button>
@@ -74,10 +78,10 @@
             <div class="card-header">Ejercicio 5</div>
             <div class="card-body">
                 <p class="card-text">5.- A partir del radio de una esfera, calcular su área y su volúmen.</p>
-                <label for="">Radio: </label><input type="number" id="lado">
+                <label for="">Radio: </label><input type="number" id="radio-esfera">
                 <div class="container-md d-flex justify-content-end">
                     <button type="button" class="btn btn-light" onclick="calcular(5)">Calcular</button>
-                </div> <span id="resultado"></span>
+                </div> <span id="resultado5"></span>
                 <div class="btn-container d-flex justify-content-between">
                     <button type="button" class="btn btn-light" onclick="anterior(5)">Anterior</button>
                     <button type="button" class="btn btn-light" onclick="siguiente(5)">Siguiente</button>
@@ -89,11 +93,11 @@
             <div class="card-body">
                 <p class="card-text">6.- A partir de la base y la altura de un triángulo, calcular su área y su
                     perímetro.</p>
-                <label class="lbl1">Base: </label><input type="number" id="base">
-                <label for="">Altura: </label><input type="number" id="altura">
+                <label class="lbl1">Base: </label><input type="number" id="base-triangulo">
+                <label for="">Altura: </label><input type="number" id="altura-triangulo">
                 <div class="container-md d-flex justify-content-end">
                     <button type="button" class="btn btn-light" onclick="calcular(6)">Calcular</button>
-                </div> <span id="resultado"></span>
+                </div> <span id="resultado6"></span>
                 <div class="btn-container d-flex justify-content-between">
                     <button type="button" class="btn btn-light" onclick="anterior(6)">Anterior</button>
                     <button type="button" class="btn btn-light" onclick="siguiente(6)">Siguiente</button>
@@ -105,17 +109,126 @@
             <div class="card-body">
                 <p class="card-text">7.- Conversión de grados Celsius a Fahrenheit: a partir de un valor en Celsius,
                     retornar el valor en Fahrenheit.</p>
-                <label for="">Base: </label><input type="number" id="base">
-                <label for="">Altura: </label><input type="number" id="altura">
+                <label for="">Celsius: </label><input type="number" id="grados-celsius">
                 <div class="container-md d-flex justify-content-end">
-                    <button type="button" class="btn btn-light" onclick="calcular()">Calcular</button>
-                </div> <span id="resultado"></span>
+                    <button type="button" class="btn btn-light" onclick="celsiusToFahrenheit(7)">Calcular</button>
+                </div> <span id="resultado7"></span>
                 <div class="btn-container d-flex justify-content-between">
                     <button type="button" class="btn btn-light" onclick="anterior(7)">Anterior</button>
                     <button type="button" class="btn btn-light" onclick="siguiente(7)">Siguiente</button>
                 </div>
             </div>
         </div>
+        <div id="ejercicio8" class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+            <div class="card-header">Ejercicio 8</div>
+            <div class="card-body">
+                <p class="card-text">8.- Conversión de grados Celsius a Kelvin: a partir de un valor en Celsius,
+                    retornar el valor en Kelvin.</p>
+                <label for="">Celsius: </label><input type="number" id="grados-c">
+                <div class="container-md d-flex justify-content-end">
+                    <button type="button" class="btn btn-light" onclick="celsiusToKelvin(8)">Calcular</button>
+                </div> <span id="resultado8"></span>
+                <div class="btn-container d-flex justify-content-between">
+                    <button type="button" class="btn btn-light" onclick="anterior(8)">Anterior</button>
+                    <button type="button" class="btn btn-light" onclick="siguiente(8)">Siguiente</button>
+                </div>
+            </div>
+        </div>
+        <div id="ejercicio9" class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+            <div class="card-header">Ejercicio 9</div>
+            <div class="card-body">
+                <p class="card-text">9.- Conversión de grados Kelvin a Fahrenheit: a partir de un valor en Kelvin,
+                    retornar el valor en Fahrenheit.</p>
+                <label for="">Kelvin: </label><input type="number" id="grados-k">
+                <div class="container-md d-flex justify-content-end">
+                    <button type="button" class="btn btn-light" onclick="kelvinToFahrenheit(9)">Calcular</button>
+                </div> <span id="resultado9"></span>
+                <div class="btn-container d-flex justify-content-between">
+                    <button type="button" class="btn btn-light" onclick="anterior(9)">Anterior</button>
+                    <button type="button" class="btn btn-light" onclick="siguiente(9)">Siguiente</button>
+                </div>
+            </div>
+        </div>
+        <div id="ejercicio10" class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+            <div class="card-header">Ejercicio 10</div>
+            <div class="card-body">
+                <p class="card-text">10.- Conversión de grados Kelvin a Celsius: a partir de un valor en Kelvin,
+                    retornar el valor en Celsius.</p>
+                <label for="">Kelvin: </label><input type="number" id="grados-kelvin">
+                <div class="container-md d-flex justify-content-end">
+                    <button type="button" class="btn btn-light" onclick="kelvinToCelsius(10)">Calcular</button>
+                </div> <span id="resultado10"></span>
+                <div class="btn-container d-flex justify-content-between">
+                    <button type="button" class="btn btn-light" onclick="anterior(10)">Anterior</button>
+                    <button type="button" class="btn btn-light" onclick="siguiente(10)">Siguiente</button>
+                </div>
+            </div>
+        </div>
+        <div id="ejercicio11" class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+            <div class="card-header">Ejercicio 11</div>
+            <div class="card-body">
+                <p class="card-text">11.- Conversión de grados Fahrenheit a Celsius: a partir de un valor en Fahrenheit,
+                    retornar el valor en Celsius.</p>
+                <label for="">Fahrenheit: </label><input type="number" id="grados-f">
+                <div class="container-md d-flex justify-content-end">
+                    <button type="button" class="btn btn-light" onclick="fahrenheitToCelsius(11)">Calcular</button>
+                </div> <span id="resultado11"></span>
+                <div class="btn-container d-flex justify-content-between">
+                    <button type="button" class="btn btn-light" onclick="anterior(11)">Anterior</button>
+                    <button type="button" class="btn btn-light" onclick="siguiente(11)">Siguiente</button>
+                </div>
+            </div>
+        </div>
+        <div id="ejercicio12" class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+            <div class="card-header">Ejercicio 12</div>
+            <div class="card-body">
+                <p class="card-text">12.- Conversión de grados Fahrenheit a Kelvin: a partir de un valor en Fahrenheit,
+                    retornar el valor en Kelvin.</p>
+                <label for="">Fahrenheit: </label><input type="number" id="grados-fahrenheit">
+                <div class="container-md d-flex justify-content-end">
+                    <button type="button" class="btn btn-light" onclick="fahrenheitToKelvin(12)">Calcular</button>
+                </div> <span id="resultado12"></span>
+                <div class="btn-container d-flex justify-content-between">
+                    <button type="button" class="btn btn-light" onclick="anterior(12)">Anterior</button>
+                    <button type="button" class="btn btn-light" onclick="siguiente(12)">Siguiente</button>
+                </div>
+            </div>
+        </div>
+        <div id="ejercicio13" class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+            <div class="card-header">Ejercicio 13</div>
+            <div class="card-body">
+                <p class="card-text">13.- Calculadora de Factorial: Solicita un número entero al usuario y calcula su
+                    factorial (n!).
+                    Muestra el resultado en la consola.</p>
+                <label for="">Base: </label><input type="number" id="base">
+                <label for="">Altura: </label><input type="number" id="altura">
+                <div class="container-md d-flex justify-content-end">
+                    <button type="button" class="btn btn-light" onclick="calcular(13)">Calcular</button>
+                </div> <span id="resultado13"></span>
+                <div class="btn-container d-flex justify-content-between">
+                    <button type="button" class="btn btn-light" onclick="anterior(13)">Anterior</button>
+                    <button type="button" class="btn btn-light" onclick="siguiente(13)">Siguiente</button>
+                </div>
+            </div>
+        </div>
+        <div id="ejercicio14" class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+            <div class="card-header">Ejercicio 14</div>
+            <div class="card-body">
+                    <p class="card-text">14.- Adivinanza de Número Aleatorio: Generar un número aleatorio entre 1 y 100 y
+                        desafiar al usuario a adivinarlo.
+                        Se deben proporcionar pistas de "más alto" o "más bajo" hasta que lo adivinen.</p>
+                <label for="">Base: </label><input type="number" id="base">
+                <label for="">Altura: </label><input type="number" id="altura">
+                <div class="container-md d-flex justify-content-end">
+                    <button type="button" class="btn btn-light" onclick="calcular(14)">Calcular</button>
+                </div> <span id="resultado14"></span>
+                <div class="btn-container d-flex justify-content-between">
+                    <button type="button" class="btn btn-light" onclick="anterior(14)">Anterior</button>
+                    <button type="button" class="btn btn-light" onclick="siguiente(14)">Siguiente</button>
+                </div>
+            </div>
+        </div>
+
 
 
 

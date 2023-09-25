@@ -4,43 +4,63 @@ function calcular(valorFigura) {
 
     let perimetro;
     let area;
- 
+    let lado, volumen, radio, base, altura;
     switch (valorFigura) {
-        case 1:            
-            const lado = document.getElementById("lado-cuadrado").value;
+        case 1:
+            lado = document.getElementById("lado-cuadrado").value;
             perimetro = lado * 4;
             area = lado * lado;
             break;
         case 2:
-            const radio = document.getElementById("radio-circulo").value;
+            radio = document.getElementById("radio-circulo").value;
             console.log(radio)
             perimetro = 2 * Math.PI * radio;
             console.log(perimetro)
             area = Math.PI * (radio * radio);
             break;
         case 3:
-            const base = document.getElementById("base-rectangulo").value;
-            const altura = document.getElementById("altura-rectangulo").value;
+            base = document.getElementById("base-rectangulo").value;
+            altura = document.getElementById("altura-rectangulo").value;
             perimetro = base * 2 + altura * 2;
             area = base * altura;
             break;
         case 4:
+            lado = document.getElementById("lado-cubo").value;
+            area = (lado ** 2) * 6;
+            volumen = lado ** 3;
             break;
         case 5:
+            radio = document.getElementById("radio-esfera").value
+            area = 4 * Math.PI * (radio * radio);
+            volumen = 4 / 3 * Math.PI * (radio ** 3);
             break;
         case 6:
+            base = parseInt(document.getElementById("base-triangulo").value);
+            altura = parseInt(document.getElementById("altura-triangulo").value);
+            const hipotenusa = Math.sqrt(altura * altura + base * base);
+            perimetro = altura + base + hipotenusa;
+            area = (altura * base) / 2;
             break;
         default:
             break;
     }
+    let resultado = 0;
     // Formatear resultado 
-    let resultado = "<ul>\n";
-    resultado += `<li> Perimetro: ${perimetro}</li>\n`;
-    resultado += `<li> Area: ${area}</li>\n`;
-    resultado += "</ul>";
+    if (valorFigura === 4 || valorFigura === 5) {
+        resultado = "<ul>\n";
+        resultado += `<li> Volumen: ${volumen}</li>\n`;
+        resultado += `<li> Area: ${area}</li>\n`;
+        resultado += "</ul>";
+    } else {
+        resultado = "<ul>\n";
+        resultado += `<li> Perimetro: ${perimetro}</li>\n`;
+        resultado += `<li> Area: ${area}</li>\n`;
+        resultado += "</ul>";
+    }
+
 
     // mostrar resultado 
-    document.getElementById("resultado").innerHTML = resultado;
+    document.getElementById(`resultado${valorFigura}`).innerHTML = resultado;
 }
 
 function siguiente(numActual) {
@@ -55,61 +75,82 @@ function anterior(numActual) {
     const numAnterior = numActual - 1;
     document.getElementById(`ejercicio${numAnterior}`).style.display = "block";
 }
-//1.- A partir del lado de un cuadrado, calcular su área y su perímetro.
-/*
-let lado = parseInt(prompt("Ingrese un lado de un cuadrado"));
-let perimetro = lado * 4;
-let area = lado * lado;
 
-console.log("area  = " + area);
-console.log("perimetro = "+ perimetro);
+function celsiusToFahrenheit(nroEjercicio) {
+    const celsius = document.getElementById("grados-celsius").value;
+    const fahrenheit = (celsius * 9 / 5) + 32;
+    let resultado = "<ul>\n";
+    resultado += `<li> Fahrenheit: ${fahrenheit}</li>\n`;
+    resultado += "</ul>";
 
-//2.- A partir del radio de un círculo, calcular su área y su perímetro.
+    document.getElementById(`resultado${nroEjercicio}`).innerHTML = resultado;
+}
 
-let radio = parseInt(prompt("Ingrese un lado de un circulo: "));
-let perimetroCir = 2*PI*radio;
-let areaCir = PI*(radio*radio);
+function celsiusToKelvin(nroEjercicio) {
+    const celsius =parseFloat(document.getElementById("grados-c").value);
+    const kelvin = celsius + 273.15;
 
-console.log("area  = " + areaCir);
-console.log("perimetro = "+ perimetroCir);
+    let resultado = "<ul>\n";
+    resultado += `<li> Kelvin: ${kelvin}</li>\n`;
+    resultado += "</ul>";
 
-//3.- A partir de los lados de un rectángulo, calcular su área y su perímetro.
+    document.getElementById(`resultado${nroEjercicio}`).innerHTML = resultado;
+}
 
-let lado1 = parseInt(prompt("Ingrese un lado de un rectangulo"));
-let lado2 = parseInt(prompt("Ingrese un lado de un rectangulo"));
-let perimetroRec = lado1 * 2 + lado2 * 2;
-let areaRec = lado1 * lado2;
+function kelvinToFahrenheit(nroEjercicio) {
+    const kelvin = parseFloat(document.getElementById("grados-k").value)
+    const celsius = kelvin - 273.15;
 
-console.log("area  = " + areaRec);
-console.log("perimetro = "+ perimetroRec);
+    // Paso 2: Convertir Celsius a Fahrenheit
+    const fahrenheit = (celsius * 9/5) + 32;
+    
+    let resultado = "<ul>\n";
+    resultado += `<li> Fahrenheit: ${fahrenheit}</li>\n`;
+    resultado += "</ul>";
 
-//4.- A partir del lado de un cubo, calcular su área, su perímetro y su volúmen.
+    document.getElementById(`resultado${nroEjercicio}`).innerHTML = resultado;
+    return fahrenheit;
+}
 
-let ladoA = parseInt(prompt("Ingrese un lado de un cubo"));
-let perimetroCubo = ladoA * 12;
-let areaCubo = (ladoA * ladoA) * 6;
-let volumenCubo = ladoA * ladoA * ladoA 
+function kelvinToCelsius(nroEjercicio) {
+    const kelvin = parseFloat(document.getElementById("grados-kelvin").value)
+    const celsius = kelvin - 273.15;
 
-console.log("area  = " + areaCubo);
-console.log("perimetro = "+ perimetroCubo);
-console.log("volumen = " + volumenCubo);
+    let resultado = "<ul>\n";
+    resultado += `<li> Celsius: ${celsius}</li>\n`;
+    resultado += "</ul>";
 
-//5.- A partir del radio de una esfera, calcular su área, su perímetro y su volúmen.
-let radioEsfera = parseInt(prompt("Ingrese el radio de la esfera"));
-let areaEsfera = 4*PI*(radioEsfera * radioEsfera);
-let volumenEsfera =  4/3 * PI * (radioEsfera * radioEsfera *radioEsfera);
+    document.getElementById(`resultado${nroEjercicio}`).innerHTML = resultado;
+    return celsius;
+}
 
-console.log("area  = " + areaEsfera);
-console.log("volumen = " + volumenEsfera);
+function fahrenheitToCelsius(nroEjercicio) {
+    const fahrenheit = parseFloat(document.getElementById("grados-f").value)
+    const celsius = (fahrenheit - 32) * (5/9);
+    let resultado = "<ul>\n";
+    resultado += `<li> Celsius: ${celsius}</li>\n`;
+    resultado += "</ul>";
 
-//6.- A partir de la base y la altura de un triángulo, calcular su área y su perímetro.
-let base = parseInt(prompt("Ingrese la base del triangulo"));
-let altura = parseInt(prompt("Ingrese la altura del triangulo"));
-lado = parseInt(prompt("Ingrese el lado restante del triangulo"));
+    document.getElementById(`resultado${nroEjercicio}`).innerHTML = resultado;
+    return celsius;
+}
 
-area = (base*altura)/2;
-perimetro = base + altura + lado;
+function fahrenheitToKelvin(nroEjercicio) {
+    const fahrenheit = parseFloat(document.getElementById("grados-fahrenheit").value)
+    const celsius = (fahrenheit - 32) * (5/9);
 
-console.log("area  = " + area);
-console.log("volumen = " + perimetro);
-*/
+    const kelvin = celsius + 273.15;
+    let resultado = "<ul>\n";
+    resultado += `<li> Kelvin: ${kelvin}</li>\n`;
+    resultado += "</ul>";
+
+    document.getElementById(`resultado${nroEjercicio}`).innerHTML = resultado;
+    return kelvin;
+}
+
+function formateadorResultado(valor1, valor2) {
+    let resultado = "<ul>\n";
+    resultado += `<li> ${valor1}: ${valor1}</li>\n`;
+    resultado += `<li> ${valor2}: ${valor2}</li>\n`;
+    resultado += "</ul>";
+}
