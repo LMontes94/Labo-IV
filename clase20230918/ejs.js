@@ -87,7 +87,7 @@ function celsiusToFahrenheit(nroEjercicio) {
 }
 
 function celsiusToKelvin(nroEjercicio) {
-    const celsius =parseFloat(document.getElementById("grados-c").value);
+    const celsius = parseFloat(document.getElementById("grados-c").value);
     const kelvin = celsius + 273.15;
 
     let resultado = "<ul>\n";
@@ -102,8 +102,8 @@ function kelvinToFahrenheit(nroEjercicio) {
     const celsius = kelvin - 273.15;
 
     // Paso 2: Convertir Celsius a Fahrenheit
-    const fahrenheit = (celsius * 9/5) + 32;
-    
+    const fahrenheit = (celsius * 9 / 5) + 32;
+
     let resultado = "<ul>\n";
     resultado += `<li> Fahrenheit: ${fahrenheit}</li>\n`;
     resultado += "</ul>";
@@ -126,7 +126,7 @@ function kelvinToCelsius(nroEjercicio) {
 
 function fahrenheitToCelsius(nroEjercicio) {
     const fahrenheit = parseFloat(document.getElementById("grados-f").value)
-    const celsius = (fahrenheit - 32) * (5/9);
+    const celsius = (fahrenheit - 32) * (5 / 9);
     let resultado = "<ul>\n";
     resultado += `<li> Celsius: ${celsius}</li>\n`;
     resultado += "</ul>";
@@ -137,7 +137,7 @@ function fahrenheitToCelsius(nroEjercicio) {
 
 function fahrenheitToKelvin(nroEjercicio) {
     const fahrenheit = parseFloat(document.getElementById("grados-fahrenheit").value)
-    const celsius = (fahrenheit - 32) * (5/9);
+    const celsius = (fahrenheit - 32) * (5 / 9);
 
     const kelvin = celsius + 273.15;
     let resultado = "<ul>\n";
@@ -153,4 +153,46 @@ function formateadorResultado(valor1, valor2) {
     resultado += `<li> ${valor1}: ${valor1}</li>\n`;
     resultado += `<li> ${valor2}: ${valor2}</li>\n`;
     resultado += "</ul>";
+    return resultado;
+}
+
+function mostrarFactorial(nroEjercicio) {
+
+    const nroAFactorizar = parseFloat(document.getElementById("factorial").value);
+    const factorial = calcularFactorial(nroAFactorizar);
+
+    let resultado = "<ul>\n";
+    resultado += `<li> Factorial de ${nroAFactorizar}! = ${factorial}</li>\n`;
+    resultado += "</ul>";
+    document.getElementById(`resultado${nroEjercicio}`).innerHTML = resultado;
+}
+
+function calcularFactorial(numero) {
+    if (numero === 0 || numero === 1) {
+        return 1;
+    }
+    let factorial = 1;
+    for (let i = 2; i <= numero; i++) {
+        factorial *= i;
+    }
+    return factorial;
+}
+
+const nroAleatorio = Math.floor(Math.random() * 100) + 1;
+let intentos = 0;
+function adivinarNumeroAleatorio() {
+
+    const numeroIngresado = parseFloat(document.getElementById("numero").value);
+    if (numeroIngresado < 1 || numeroIngresado > 100) {
+        alert("Por favor, ingresa un número válido entre 1 y 100.");
+    }
+    intentos++;
+    if (numeroIngresado === nroAleatorio) {
+        alert(`¡Felicitaciones! Adivinaste el número ${nroAleatorio} en ${intentos} intentos.`);
+        adivinado = true;
+    } else if (numeroIngresado < nroAleatorio) {
+        alert("El número es más alto. Sigue intentando.");
+    } else {
+        alert("El número es más bajo. Sigue intentando.");
+    }
 }
