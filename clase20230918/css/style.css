@@ -1,3 +1,8 @@
+/*body {
+  background-image: url("../img/fondo-pizarron.jpg");
+  background-size: cover;
+}*/
+
 #ejercicio2,
 #ejercicio3,
 #ejercicio4,
@@ -26,6 +31,7 @@
 
 .btn {
   margin: 15px;
+  padding: 10px 10px;
 }
 
 .lbl1 {
@@ -35,4 +41,14 @@
 label,
 .lbl2 {
   margin: 8px;
+}
+
+.nro-facto {
+  text-align: center;
+  padding: 5px;
+  margin: 5px;
+}
+
+#adivinanza {
+  font-size: 22px;
 }

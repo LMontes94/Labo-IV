@@ -22,9 +22,10 @@
                     su perímetro.
                 </p>
                 <label for="">Lado: </label><input type="number" id="lado-cuadrado">
-                <button type="button" class="btn btn-light" onclick="calcular(1)">Calcular</button>
-                <span id="resultado1"></span>
-                <button type="button" class="btn btn-light" onclick="siguiente(1)">Siguiente</button>
+                <div class="btn-container d-flex justify-content-between">
+                    <button type="button" class="btn btn-light" onclick="calcular(1)">Calcular</button>
+                    <button type="button" class="btn btn-light" onclick="siguiente(1)">Siguiente</button>
+                </div><span id="resultado1"></span>
             </div>
         </div>
         <div id="ejercicio2" class="card text-white bg-primary mb-3" style="max-width: 25rem;">
@@ -200,14 +201,15 @@
                 <p class="card-text">13.- Calculadora de Factorial: Solicita un número entero al usuario y calcula su
                     factorial (n!).
                     Muestra el resultado en la consola.</p>
-                <label for="">Numero a factorizar: </label><input type="number" id="factorial">
-                <div class="container-md d-flex justify-content-end">
-                    <button type="button" class="btn btn-light" onclick="mostrarFactorial(13)">Calcular</button>
-                </div> <span id="resultado13"></span>
-                <div class="btn-container d-flex justify-content-between">
+                <div class="nro-facto">
+                    <label for="">Numero a factorizar: </label><input type="number" id="factorial">
+                </div>
+                <div class="btn-container d-flex justify-content-center">
                     <button type="button" class="btn btn-light" onclick="anterior(13)">Anterior</button>
+                    <button type="button" class="btn btn-light" onclick="mostrarFactorial(13)">Calcular</button>
                     <button type="button" class="btn btn-light" onclick="siguiente(13)">Siguiente</button>
                 </div>
+                <span id="resultado13"></span>
             </div>
         </div>
         <div id="ejercicio14" class="card text-white bg-primary mb-3" style="max-width: 20rem;">
@@ -218,17 +220,20 @@
                     Se deben proporcionar pistas de "más alto" o "más bajo" hasta que lo adivinen.</p>
                 <label for="">Numero: </label><input type="number" id="numero">
                 <div class="container-md d-flex justify-content-end">
-                    <button type="button" class="btn btn-light" onclick="adivinarNumeroAleatorio()">Adivinar</button>
                     <div class="btn-container d-flex justify-content-between">
                         <button type="button" class="btn btn-light" onclick="anterior(14)">Anterior</button>
+
+                        <button type="button" class="btn btn-light"
+                            onclick="adivinarNumeroAleatorio()">Adivinar</button>
                     </div>
-                </div>
+                </div> <span id="adivinanza"></span>
             </div>
-
-
-
-
         </div>
+
+
+
+
+    </div>
 </body>
 <footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

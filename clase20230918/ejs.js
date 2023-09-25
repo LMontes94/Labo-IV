@@ -13,10 +13,8 @@ function calcular(valorFigura) {
             break;
         case 2:
             radio = document.getElementById("radio-circulo").value;
-            console.log(radio)
-            perimetro = 2 * Math.PI * radio;
-            console.log(perimetro)
-            area = Math.PI * (radio * radio);
+            perimetro = (2 * Math.PI * radio).toFixed(2);
+            area = (Math.PI * (radio * radio)).toFixed(2);
             break;
         case 3:
             base = document.getElementById("base-rectangulo").value;
@@ -31,13 +29,14 @@ function calcular(valorFigura) {
             break;
         case 5:
             radio = document.getElementById("radio-esfera").value
-            area = 4 * Math.PI * (radio * radio);
-            volumen = 4 / 3 * Math.PI * (radio ** 3);
+            area = (4 * Math.PI * (radio * radio)).toFixed(2);
+            volumen = (4 / 3 * Math.PI * (radio ** 3)).toFixed(2);
             break;
         case 6:
             base = parseInt(document.getElementById("base-triangulo").value);
             altura = parseInt(document.getElementById("altura-triangulo").value);
-            const hipotenusa = Math.sqrt(altura * altura + base * base);
+            const hipotenusa = parseFloat((Math.sqrt(altura * altura + base * base)).toFixed(2));
+
             perimetro = altura + base + hipotenusa;
             area = (altura * base) / 2;
             break;
@@ -102,7 +101,7 @@ function kelvinToFahrenheit(nroEjercicio) {
     const celsius = kelvin - 273.15;
 
     // Paso 2: Convertir Celsius a Fahrenheit
-    const fahrenheit = (celsius * 9 / 5) + 32;
+    const fahrenheit = ((celsius * 9 / 5) + 32).toFixed(2);
 
     let resultado = "<ul>\n";
     resultado += `<li> Fahrenheit: ${fahrenheit}</li>\n`;
@@ -114,7 +113,7 @@ function kelvinToFahrenheit(nroEjercicio) {
 
 function kelvinToCelsius(nroEjercicio) {
     const kelvin = parseFloat(document.getElementById("grados-kelvin").value)
-    const celsius = kelvin - 273.15;
+    const celsius = (kelvin - 273.15).toFixed(2);
 
     let resultado = "<ul>\n";
     resultado += `<li> Celsius: ${celsius}</li>\n`;
@@ -126,7 +125,7 @@ function kelvinToCelsius(nroEjercicio) {
 
 function fahrenheitToCelsius(nroEjercicio) {
     const fahrenheit = parseFloat(document.getElementById("grados-f").value)
-    const celsius = (fahrenheit - 32) * (5 / 9);
+    const celsius = ((fahrenheit - 32) * (5 / 9)).toFixed(2);
     let resultado = "<ul>\n";
     resultado += `<li> Celsius: ${celsius}</li>\n`;
     resultado += "</ul>";
@@ -139,7 +138,7 @@ function fahrenheitToKelvin(nroEjercicio) {
     const fahrenheit = parseFloat(document.getElementById("grados-fahrenheit").value)
     const celsius = (fahrenheit - 32) * (5 / 9);
 
-    const kelvin = celsius + 273.15;
+    const kelvin = (celsius + 273.15).toFixed(2);
     let resultado = "<ul>\n";
     resultado += `<li> Kelvin: ${kelvin}</li>\n`;
     resultado += "</ul>";
@@ -181,18 +180,23 @@ function calcularFactorial(numero) {
 const nroAleatorio = Math.floor(Math.random() * 100) + 1;
 let intentos = 0;
 function adivinarNumeroAleatorio() {
-
+    let resultado = " ";
     const numeroIngresado = parseFloat(document.getElementById("numero").value);
     if (numeroIngresado < 1 || numeroIngresado > 100) {
-        alert("Por favor, ingresa un número válido entre 1 y 100.");
+        //alert("Por favor, ingresa un número válido entre 1 y 100.");
+        resultado = "Por favor, ingresa un número válido entre 1 y 100.";
     }
     intentos++;
     if (numeroIngresado === nroAleatorio) {
-        alert(`¡Felicitaciones! Adivinaste el número ${nroAleatorio} en ${intentos} intentos.`);
-        adivinado = true;
+        //alert(`¡Felicitaciones! Adivinaste el número ${nroAleatorio} en ${intentos} intentos.`);
+        resultado = `¡Felicitaciones! Adivinaste el número ${nroAleatorio} en ${intentos} intentos.`
     } else if (numeroIngresado < nroAleatorio) {
-        alert("El número es más alto. Sigue intentando.");
+        //alert("El número es más alto. Sigue intentando.");
+        resultado = "El número es más alto. Sigue intentando.";
     } else {
-        alert("El número es más bajo. Sigue intentando.");
+        //alert("El número es más bajo. Sigue intentando.");
+        resultado = "El número es más bajo. Sigue intentando."
     }
+
+    document.getElementById("adivinanza").innerHTML = resultado;
 }
