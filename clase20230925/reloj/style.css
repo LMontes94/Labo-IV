@@ -1,0 +1,32 @@
+body {
+   /* display: flex;
+    justify-content: center;
+    align-items: center;*/
+    height: 100vh;
+    margin: 0;
+    background-color: #222;
+}
+
+.container-sm{
+   margin: 30px;
+   padding: 10px;
+}
+
+.card-header{
+    font-size: 25px;
+}
+
+.reloj {
+    font-size: 120px;
+    padding: 15px;
+}
+
+#time {
+    font-size: 2rem;
+    color: #fff;
+    white-space: nowrap; 
+}
+
+
+
+
