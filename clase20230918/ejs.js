@@ -58,7 +58,6 @@ function calcular(valorFigura) {
     }
 
 
-    // mostrar resultado 
     document.getElementById(`resultado${valorFigura}`).innerHTML = resultado;
 }
 

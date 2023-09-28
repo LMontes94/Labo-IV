@@ -1,0 +1,54 @@
+body {
+  /* display: flex;
+    justify-content: center;
+    align-items: center;*/
+  height: 100vh;
+  margin: 0;
+  background-color: #222;
+}
+
+.container-md {
+  text-align: center;
+  /* margin: 30px;*/
+  padding: 15px;
+}
+
+.container-sm {
+  text-align: center;
+  margin: 80px;
+  padding: 10px;
+}
+
+.container {
+  text-align: center;
+}
+
+.card-header {
+  font-size: 3.8rem;
+}
+
+.reloj {
+  margin: 8px;
+  padding: 50px;
+}
+
+#time,
+#day,
+#resultado {
+  font-size: 3.5rem;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.btn {
+  margin: 15px;
+}
+
+.bandera {
+  width: 24px;
+  height: 24px;
+}
+
+.form-control {
+  padding: 4px;
+}
