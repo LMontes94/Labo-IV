@@ -16,10 +16,27 @@ body {
   padding: 10px;
 }
 
+.container-lg {
+  align-items: center;
+  text-align: center;
+  margin-top: 50px;
+}
+
 .container {
   text-align: center;
 }
+.card {
+  transition: transform 0.8s, box-shadow 0.5s;
+}
 
+.card:hover {
+  transform: translateY(-40px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+a {
+  text-decoration: none;
+  color: #007bff;
+}
 .card-header {
   font-size: 3.8rem;
 }
@@ -52,8 +69,13 @@ body {
 
 #reiniciar,
 #pausa,
-#reset {
+#reset,
+#registro {
   display: none;
+}
+
+#resultado {
+  color: rgb(126, 121, 121);
 }
 
 .img-flag {
@@ -64,7 +86,6 @@ body {
 }
 
 @media (max-width: 768px) {
-
   .container-md {
     padding: 5px;
   }
@@ -100,8 +121,14 @@ body {
 }
 
 @media (max-width: 576px) {
-
   .container-sm {
     margin: auto;
   }
+}
+
+.relojito,
+.cronometro-img,
+.reloj-de-arena {
+  width: 50px;
+  height: 50px;
 }

@@ -4,7 +4,6 @@ let hora = 0;
 let segPausada = 0, minPausada = 0, horaPausada = 0;
 let pausado = false;
 let intervalo;
-const mensaje = "Finalizo la cuenta regresiva..... ";
 
 function actualizarTimer() {
     seg = document.getElementById("inputSeg").value;
@@ -12,25 +11,12 @@ function actualizarTimer() {
     hora = document.getElementById("inputHora").value;
 }
 
-function createImg() {
-    const img = document.createElement("img");
-    img.src = "../img/banderas.png";
-    img.classList.add("img-flag");
-    const contenedorImg = document.getElementById("finalizo");
-    contenedorImg.appendChild(img);
-    return img;
-}
 function reverso() {
     intervalo = setInterval(function () {
         if (hora == 0 && min == 0 && seg == 0) {
             resetear();
-            setTimeout(function () {
-                console.log(createImg())
-                imgFlag = createImg();
-                document.getElementById("finalizo").innerHTML = mensaje;
-            }, 5000)
-
-
+            const mensaje = "Finalizo la cuenta regresiva..... ";
+            alert(mensaje);
         } else {
             seg--;
             if (seg < 0) {
@@ -47,6 +33,14 @@ function reverso() {
 
 function inicio() {
     actualizarTimer();
+    if (verificarSegundos()) {
+        alert("Ingrese un numero valido para los segundos!!!")
+        resetear();
+    }
+    if (verificarMinutos()) {
+        alert("Ingrese un numero valido para los minutos!!!")
+        resetear();
+    }
     reverso();
     document.getElementById("inicio").style.display = "none";
     document.getElementById("pausa").style.display = "block";
@@ -98,4 +92,18 @@ function limpiarInput() {
     document.getElementById("inputSeg").value = "";
     document.getElementById("inputMin").value = "";
     document.getElementById("inputHora").value = "";
+}
+
+function verificarSegundos() {
+    if (seg < 0 || seg > 59) {
+        return true;
+    }
+    return false;
+}
+
+function verificarMinutos() {
+    if (min < 0 || min > 59) {
+        return true;
+    }
+    return false;
 }

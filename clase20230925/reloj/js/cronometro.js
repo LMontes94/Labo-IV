@@ -38,6 +38,9 @@ function inicio() {
     if (!intervalo) {
         intervalo = setInterval(actualizarTiempo, 1000);
     }
+    document.getElementById("pausa").style.display = "block";
+    document.getElementById("reset").style.display = "block";
+    document.getElementById("registro").style.display = "block";
 }
 
 function pausa() {
