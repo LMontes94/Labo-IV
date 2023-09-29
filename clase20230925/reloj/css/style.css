@@ -1,10 +1,7 @@
 body {
-  /* display: flex;
-    justify-content: center;
-    align-items: center;*/
   height: 100vh;
   margin: 0;
-  background-color: #222;
+  background-color: #e0dada;
 }
 
 .container-md {
@@ -51,4 +48,60 @@ body {
 
 .form-control {
   padding: 4px;
+}
+
+#reiniciar,
+#pausa,
+#reset {
+  display: none;
+}
+
+.img-flag {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #ccc;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+
+  .container-md {
+    padding: 5px;
+  }
+
+  .container-sm {
+    margin: 20px;
+  }
+
+  .card-header {
+    font-size: 2rem;
+  }
+
+  #time,
+  #day,
+  #resultado {
+    font-size: 2rem;
+  }
+
+  .btn {
+    margin: 2px;
+  }
+
+  .reloj {
+    margin: 3px;
+    padding: 5px;
+  }
+  .img-flag {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    margin-top: 3px;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .container-sm {
+    margin: auto;
+  }
 }
