@@ -1,4 +1,4 @@
-let dia;
+
 const ciudades = [{
     nombre: 'Buenos Aires',
     zonaHoraria: 'America/Argentina/Buenos_Aires',
@@ -20,18 +20,26 @@ const ciudades = [{
 }]
 
 function obtenerHora(ciudad) {
-    dia = new Date();
+    const dia = new Date();
     const hora = dia.toLocaleTimeString(ciudad.idiomaRegion, { timeZone: ciudad.zonaHoraria });
     return hora;
 }
 
+function obtenerFecha(ciudad) {
+    const dia = new Date(); 
+    const fecha = dia.toLocaleDateString(ciudad.idiomaRegion, { timeZone: ciudad.zonaHoraria });
+    return fecha;
+}
+
 function mostrarHoras() {
     ciudades.forEach((ciudad, indice) => {
-        const hora = obtenerHora(ciudad)
+        const hora = obtenerHora(ciudad);
+        const fecha = obtenerFecha(ciudad);
         const elementoHora = document.getElementById(`time-${indice}`);
-        const elemetoDia = document.getElementById(`day-${indice}`);
-        mostrarTiempo(elementoHora,hora);
-        mostrarFecha(elemetoDia,dia)
+        const elementoDia = document.getElementById(`day-${indice}`);
+    
+        mostrarTiempo(elementoHora, hora);
+        mostrarFecha(elementoDia, fecha)
     })
 }
 
@@ -40,8 +48,7 @@ function mostrarTiempo(hc, h) {
 }
 
 function mostrarFecha(fc, f) {
-    let fecha = f.toLocaleDateString()
-    fc.textContent = fecha;
+    fc.textContent = f;
 }
 
-setInterval(mostrarHoras,1000);
+setInterval(mostrarHoras, 1000);
