@@ -1,10 +1,11 @@
+let dia;
 
 function actualizadorHora() {
 
     const horaCompleta = document.getElementById("time");
     const fechaCompleta = document.getElementById("day");
     setInterval(function () {
-        let dia = new Date;
+        dia = new Date;
         let hora = dia.getHours();
         let minutos = dia.getMinutes();
         let segundos = dia.getSeconds();
@@ -27,5 +28,6 @@ function mostrarTiempo(hc, h, m, s) {
 function mostrarFecha(fc, f) {
     fc.textContent = `${f}`;
 }
+
 actualizadorHora();
 

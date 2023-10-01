@@ -24,9 +24,6 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./reloj.html">Reloj</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="./cronometro.html">Cronometro</a>
                     </li>
                     <li class="nav-item">
@@ -38,36 +35,48 @@
             </div>
         </div>
     </nav>
-    <div class="container-lg d-flex justify-content-between align-items-center  ">
-        <a href="./reloj.html">
-            <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
-                <div class="card-header">Reloj</div>
+    <h1 class="title">Zona Horaria<img src="./img/reloj.png" alt="reloj" class="relojito"></h1>
+    <div class="container-sm d-flex justify-content-between">
+        <div class="row d-flex justify-content-between">
+            <div class="card text-white bg-secondary mb-3" style="max-width: 30rem;">
+                <div class="card-header">Buenos Aires</div>
                 <div class="card-body">
-                    <img src="./img/reloj.png" alt="reloj" class="img-fluid">
+                    <div class="reloj">
+                        <div id="time-0"></div>
+                        <div id="day-0"></div>
+                    </div>
                 </div>
             </div>
-        </a>
-        <a href="./cronometro.html">
-            <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
-                <div class="card-header">Cronometro</div>
+            <div class="card text-white bg-secondary mb-3" style="max-width: 30rem;">
+                <div class="card-header">Nueva York</div>
                 <div class="card-body">
-                    <img src="./img/cronometro.png" alt="cronometro" class="img-fluid">
+                    <div class="reloj">
+                        <div id="time-1"></div>
+                        <div id="day-1"></div>
+                    </div>
                 </div>
             </div>
-        </a><a href="./timer.html">
-            <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
-                <div class="card-header">Timer</div>
+            <div class="card text-white bg-secondary mb-3" style="max-width: 30rem;">
+                <div class="card-header">Londres</div>
                 <div class="card-body">
-                    <img src="./img/reloj-de-arena.png" alt="reloj-de-arena" class="img-fluid">
+                    <div class="reloj">
+                        <div id="time-2"></div>
+                        <div id="day-2"></div>
+                    </div>
                 </div>
             </div>
-        </a>
+            <div class="card text-white bg-secondary mb-3" style="max-width: 30rem;">
+                <div class="card-header">Hong Kong</div>
+                <div class="card-body">
+                    <div class="reloj">
+                        <div id="time-3"></div>
+                        <div id="day-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <footer>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-            crossorigin="anonymous"></script>
-    </footer>
+    <script src="./js/zonaHoraria.js"></script>
 </body>
 
 </html>

@@ -33,18 +33,16 @@ function reverso() {
 
 function inicio() {
     actualizarTimer();
-    if (verificarSegundos()) {
-        alert("Ingrese un numero valido para los segundos!!!")
+    if (!verificarInputVacios() && !verificarTiempo(min) && !verificarTiempo(seg)) {
+        reverso();
+        document.getElementById("inicio").style.display = "none";
+        document.getElementById("pausa").style.display = "block";
+        document.getElementById("reset").style.display = "block";
+    } else {
+        alert("No a ingresado numeros o algun valor no es correspondiente!!");
         resetear();
     }
-    if (verificarMinutos()) {
-        alert("Ingrese un numero valido para los minutos!!!")
-        resetear();
-    }
-    reverso();
-    document.getElementById("inicio").style.display = "none";
-    document.getElementById("pausa").style.display = "block";
-    document.getElementById("reset").style.display = "block";
+
 }
 
 function formatearHora(h, m, s) {
@@ -94,16 +92,14 @@ function limpiarInput() {
     document.getElementById("inputHora").value = "";
 }
 
-function verificarSegundos() {
-    if (seg < 0 || seg > 59) {
-        return true;
-    }
-    return false;
+function verificarTiempo(t) {
+    return t < 0 || t > 59;
 }
 
-function verificarMinutos() {
-    if (min < 0 || min > 59) {
-        return true;
-    }
-    return false;
+function verificarInputVacios() {
+    const inputSeg = document.getElementById("inputSeg").value;
+    const inputMin = document.getElementById("inputMin").value;
+    const inputHora = document.getElementById("inputHora").value;
+
+    return inputSeg == "" && inputMin == "" && inputHora == "";
 }
