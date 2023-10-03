@@ -1,0 +1,27 @@
+.container-md {
+    width: 100%;
+    margin: 20px;
+}
+
+.semaforo {
+    background-color: #ac4c4c;
+    height: 100px;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rojo,
+.amarillo,
+.verde {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: #5c5b59;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+    margin: 6px;
+}

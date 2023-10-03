@@ -1,0 +1,11 @@
+1.- Calculdora de celular-
+     4 operaciones básicas- 
+     Raíz cuadrada- Porcentaje- 
+     Factorial- 
+     Borrar caracteres- 
+     Limpiar la pantalla
+
+2.- Temporizador Pomodoro- 
+    Bloques de 25'- 
+    Descansos de 5'- 
+    Tercer descanso de 15'
