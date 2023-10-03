@@ -1,0 +1,39 @@
+.body {
+  height: 100%;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  margin: 50px;
+}
+
+.pantalla {
+  background-color: rgb(85, 82, 82);
+  height: 30px;
+  margin: 25px;
+  border: 3px solid #ffff;
+}
+
+.container-md {
+  width: 350px;
+  height: 320px;
+  border: 5px solid #ffff;
+}
+
+.col {
+  text-align: center;
+  margin: 3px;
+}
+
+.btn {
+  width: 40px;
+  border-radius: 50px;
+}
+
+.resultado {
+  margin: 10px;
+  padding: 15px;
+  font-size: 20px;
+  color: aliceblue;
+}

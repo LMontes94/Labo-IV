@@ -1,27 +1,30 @@
 .container-md {
-    width: 100%;
-    margin: 20px;
+  width: 100%;
+  height: 200px;
+  margin: 20px;
 }
 
 .semaforo {
-    background-color: #ac4c4c;
-    height: 100px;
-    width: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+  background-color: #e5f50e;
+  height: 100px;
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  margin: 15px;
+  border: 3px solid black;
 }
 
 .rojo,
 .amarillo,
 .verde {
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    background-color: #5c5b59;
-    text-align: center;
-    line-height: 40px;
-    color: white;
-    margin: 6px;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background-color: #5c5b59;
+  text-align: center;
+  line-height: 40px;
+  margin: 6px;
 }

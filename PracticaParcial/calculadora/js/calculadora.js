@@ -31,7 +31,7 @@ function multiplicar(a, b) {
 }
 function dividir(a, b) {
     if (b != 0) {
-        return a / b
+        return (a / b).toFixed(2);
     } else {
         resultado = "Error al dividir!!"
     }
@@ -48,7 +48,7 @@ function calcularFactorial(num) {
 
 function calcularPorcentaje(num) {
     const numero1 = parseFloat(num);
-    const porcentaje = numero1 / 100;
+    const porcentaje = (numero1 / 100).toFixed(2);
     return porcentaje;
 
 }
@@ -58,7 +58,7 @@ function calcularRaiz(num) {
     if (numero1 < 0) {
         resultado = "Error: No se puede calcular la raíz de un número negativo";
     }
-    const raiz = Math.sqrt(numero1);
+    const raiz = Math.sqrt(numero1).toFixed(2);
     resultado = raiz;
     return resultado;
 
@@ -83,7 +83,7 @@ function calcular() {
             resultado = dividir(numero1, numero2);
             break;
         case "!":
-            resultado =  calcularFactorial(numero1);
+            resultado = calcularFactorial(numero1);
             break;
         case "%":
             resultado = calcularPorcentaje(numero1);
@@ -135,9 +135,9 @@ document.getElementById("tres").addEventListener("click", () => seleccionarNumer
 document.getElementById("resta").addEventListener("click", () => seleccionarOperador("-"));
 document.getElementById("cero").addEventListener("click", () => seleccionarNumero("0"));
 document.getElementById("suma").addEventListener("click", () => seleccionarOperador("+"));
-document.getElementById("factorial").addEventListener("click",()=> seleccionarOperador("!"));
-document.getElementById("porcentaje").addEventListener("click",()=> seleccionarOperador("%"));
-document.getElementById("raiz").addEventListener("click", ()=>seleccionarOperador("(√)"));
+document.getElementById("factorial").addEventListener("click", () => seleccionarOperador("!"));
+document.getElementById("porcentaje").addEventListener("click", () => seleccionarOperador("%"));
+document.getElementById("raiz").addEventListener("click", () => seleccionarOperador("(√)"));
 document.getElementById("borrar-uno").addEventListener("click", borrarCaracter);
 document.getElementById("igual").addEventListener("click", calcular);
 document.getElementById("borrar").addEventListener("click", borrarTodo);

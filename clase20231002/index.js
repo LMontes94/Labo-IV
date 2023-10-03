@@ -1,11 +1,11 @@
 let contar = 0;
 
-function contador(){
+function contador() {
     contar++;
     document.getElementById("resultado").textContent = contar;
 }
 
-function reset(){
+function reset() {
     document.getElementById("resultado").textContent = 0;
 }
 
@@ -16,18 +16,13 @@ function claro() {
 function oscuro() {
     document.getElementById("modo").style.backgroundColor = "#1e0a4d"
 }
-
+let estado = 0;
 function cambioEstado() {
-   let estado = 0;
-   const rojo = document.getElementById("red");
-   const amarillo = document.getElementById("yellow");
-   const verde = document.getElementById("green");
 
-   if(estado == 0){
-     estado++;
-     rojo.style.color = "#f01919";
-   }else if(estado == 1){
-      estado++;
-      amarillo.style.color = ""
-   }
+    const rojo = document.getElementById("red");
+    const amarillo = document.getElementById("yellow");
+    const verde = document.getElementById("green");
+
+
 }
+
