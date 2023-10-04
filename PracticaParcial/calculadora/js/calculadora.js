@@ -108,11 +108,14 @@ function actualizarResultado() {
 function borrarCaracter() {
     if (operador === "") {
         num1 = num1.slice(0, -1);
+        resultado = num1;
     } else {
         num2 = num2.slice(0, -1);
+        resultado = num2
     }
     actualizarResultado();
 }
+
 function borrarTodo() {
     operador = "";
     num1 = "";
