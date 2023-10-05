@@ -1,8 +1,17 @@
 #reiniciar,
 #pausa,
-#reset
-{
+#reset {
   display: none;
 }
 
-#time
+.container-sm {
+  margin-top: 50px;
+  width: 350px;
+  height: 100%; /* Establece la altura al 100% para que funcione la alineación vertical */
+}
+
+#time {
+  width: 200px;
+  text-align: center;
+  margin: 10px;
+}

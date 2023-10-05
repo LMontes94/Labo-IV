@@ -5,11 +5,14 @@ let segPausada = 0, minPausada = 0, horaPausada = 0;
 let pausado = false;
 let intervalo;
 let descanso = false;
+let time = 0;
 
 function actualizarTimer() {
-    seg = document.getElementById("inputSeg").value;
-    min = document.getElementById("inputMin").value;
-    hora = document.getElementById("inputHora").value;
+    time = document.getElementById("time").textContent;
+    let componentesHora = time.split(":");
+    hora = parseInt(componentesHora[0]);
+    min = parseInt(componentesHora[1]);
+    seg = parseInt(componentesHora[2]);
 }
 
 function reverso() {
@@ -19,11 +22,11 @@ function reverso() {
             const mensaje = "Finalizó";
             alert(mensaje);
             if (!descanso) {
-                document.getElementById("tiempo-restante").textContent = "Descanso";
-                document.getElementById("iniciar").textContent = "Iniciar Descanso";
+                document.getElementById("head").textContent = "Descanso";
+                document.getElementById("time").textContent = "00 : 05 : 00";
                 descanso = true;
             }
-            
+
         } else {
             seg--;
             if (seg < 0) {
@@ -40,7 +43,8 @@ function reverso() {
 
 function inicio() {
     actualizarTimer();
-    if (!verificarInputVacios() && !verificarTiempo(min) && !verificarTiempo(seg)) {
+    console.log(time);
+    if (!verificarTiempo(min) && !verificarTiempo(seg)) {
         reverso();
         document.getElementById("inicio").style.display = "none";
         document.getElementById("pausa").style.display = "block";
@@ -87,26 +91,12 @@ function resetear() {
     min = 0;
     hora = 0;
     mostrarTiempo();
-    limpiarInput();
     document.getElementById("inicio").style.display = "block";
     document.getElementById("reiniciar").style.display = "none";
     document.getElementById("reset").style.display = "none";
-}
-
-function limpiarInput() {
-    document.getElementById("inputSeg").value = "";
-    document.getElementById("inputMin").value = "";
-    document.getElementById("inputHora").value = "";
 }
 
 function verificarTiempo(t) {
     return t < 0 || t > 59;
 }
 
-function verificarInputVacios() {
-    const inputSeg = document.getElementById("inputSeg").value;
-    const inputMin = document.getElementById("inputMin").value;
-    const inputHora = document.getElementById("inputHora").value;
-
-    return inputSeg == "" && inputMin == "" && inputHora == "";
-}

@@ -6,15 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomodoro</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
     <div class="container-sm d-flex justify-content-center">
         <div class="card text-white bg-secondary mb-3" style="max-width: 30rem;">
-            <div class="card-header">Timer</div>
+            <div class="card-header" id="head">Timer</div>
             <div class="card-body">
                 <div class="reloj">
-                    <div id="time">25:00:00</div>
+                    <div id="time">00:00:05</div>
                 </div>
                 <div class="container-md d-flex justify-content-center">
                     <button type="button" class="btn btn-light" id="inicio" onclick="inicio()">Iniciar</button>
