@@ -4,8 +4,9 @@ let hora = 0;
 let segPausada = 0, minPausada = 0, horaPausada = 0;
 let pausado = false;
 let intervalo;
-let descanso = false;
 let time = 0;
+let contador = 0;
+let descanso = 0;
 
 function actualizarTimer() {
     time = document.getElementById("time").textContent;
@@ -18,15 +19,26 @@ function actualizarTimer() {
 function reverso() {
     intervalo = setInterval(function () {
         if (hora == 0 && min == 0 && seg == 0) {
+            contador++;
             resetear();
-            const mensaje = "Finalizó";
-            alert(mensaje);
-            if (!descanso) {
-                document.getElementById("head").textContent = "Descanso";
-                document.getElementById("time").textContent = "00 : 05 : 00";
-                descanso = true;
-            }
-
+            let mensaje = "Finalizó";
+            if ((contador%2) == 0) {
+                document.getElementById("head").textContent = "A Trabajar";
+                document.getElementById("time").textContent = "00 : 00 : 05";
+                mensaje += ", empieza el descanso...";
+                alert(mensaje);
+            }else if (descanso < 3) {
+                 descanso++;
+                tiempoDescanso();
+                mensaje += " el descanso...";  
+                alert(mensaje); 
+            }else{
+               mensaje += " pomodoro finalizado....";
+               alert(mensaje);
+              document.getElementById("head").textContent = "Pomodoro"; 
+              document.getElementById("time").textContent = "00 : 00 : 05";
+            }                          
+            
         } else {
             seg--;
             if (seg < 0) {
@@ -39,6 +51,15 @@ function reverso() {
             mostrarTiempo();
         }
     }, 1000);
+}
+
+function tiempoDescanso(){
+    document.getElementById("head").textContent = "Descanso";
+    if (contador < 5) {
+        document.getElementById("time").textContent = "00 : 00 : 03";
+    }else{
+      document.getElementById("time").textContent = "00 : 00 : 05";  
+    }
 }
 
 function inicio() {
