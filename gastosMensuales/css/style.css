@@ -21,7 +21,3 @@ a {
   justify-content: center;
   min-height: 100vh; /* Esto centra verticalmente en la pantalla */
 }
-
-.container-md > a {
-  margin: 10px; /* Agrega espacio entre las tarjetas */
-}
