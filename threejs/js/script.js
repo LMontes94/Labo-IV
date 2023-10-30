@@ -25,7 +25,6 @@ scene.add(cube);
 scene.add(cube2);
 
 // Animación
-// Animación
 const animate = () => {
     requestAnimationFrame(animate);
     cube.rotation.x += 0.01;
