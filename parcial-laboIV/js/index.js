@@ -1,14 +1,14 @@
-let datosHistoria = {
-    personaje: "",
-    objetoAmigo: "",
-    objetoMisterioso: "",
-    objeto: "",
-    hogar: "",
-    terreno: ""
-}
+
 
 function agregarDatos() {
-
+    let datosHistoria = {
+        personaje: "",
+        objetoAmigo: "",
+        objetoMisterioso: "",
+        objeto: "",
+        hogar: "",
+        terreno: ""
+    }
     datosHistoria["personaje"] = obtenerNombreProtagonista();
     datosHistoria["objetoAmigo"] = obtenerNombreAmigo();
     datosHistoria["objetoMisterioso"] = obtenerNombreObjetoMisterioso();
