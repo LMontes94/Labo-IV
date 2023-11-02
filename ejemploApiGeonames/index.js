@@ -59,24 +59,59 @@ function reemplazarEspaciosEnCapital(countryInfo) {
     return countryInfo;
 }
 
+function quitarTildes(texto) {
+    return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
+function obtenerFechaDesdeDatetime(datetimeString) {
+    const fechaHora = new Date(datetimeString);
+    const dia = fechaHora.getDate();
+    const mes = fechaHora.getMonth() + 1; // Sumar 1 para obtener el mes real
+    const anio = fechaHora.getFullYear();
+    return { dia, mes, anio };
+}
+
+function formatearHora(hora, minutos, segundos) {
+    return `${hora.toString().padStart(2, '0')} : ${minutos.toString().padStart(2, '0')} : ${segundos.toString().padStart(2, '0')}`;
+}
+
+function formatearFecha(dia, mes, anio) {
+    return `${dia.toString().padStart(2, '0')} / ${mes.toString().padStart(2, '0')} / ${anio}`;
+}
+function mostrarFecha(fechaCompleta) {
+    return formatearFecha(fechaCompleta["dia"], fechaCompleta["mes"], fechaCompleta["anio"])
+}
+
+function limpiarInput() {
+    document.getElementById("country").value = "";
+}
 
 function updateClock(continentName, countryName, capital) {
     const clockElement = document.getElementById("clock");
+    const day = document.getElementById("day");
 
     try {
-        const url = `https://worldtimeapi.org/api/timezone/${continentName}/${countryName}/${capital}`;
+        let url;
+        if (countryName == "Argentina") {
+            url = `https://worldtimeapi.org/api/timezone/${continentName}/${countryName}/${capital}`;
+        } else {
+            url = `https://worldtimeapi.org/api/timezone/${continentName}/${capital}`;
+        }
+
         fetch(url)
             .then(response => response.json())
             .then(data => {
                 console.log(data)
-                if (data.raw_offset) {
-                    const rawOffsetSeconds = data.raw_offset;
-                    const localTime = new Date(new Date().getTime() + rawOffsetSeconds * 1000); // Suma el desfase a la hora UTC
-                    const localHours = localTime.getUTCHours().toString().padStart(2, '0');
-                    const localMinutes = localTime.getUTCMinutes().toString().padStart(2, '0');
-                    const localSeconds = localTime.getUTCSeconds().toString().padStart(2, '0');
-                    const timeString = `${localHours}:${localMinutes}:${localSeconds}`;
-                    clockElement.textContent = timeString;
+                if (data.datetime) {
+                    const dateTimeString = data.datetime;
+                    const hora = dateTimeString.match(/T(\d{2}:\d{2}:\d{2})/)[1];/*la expresión regular /T(\d{2}:\d{2}:\d{2})/ busca el patrón "T" 
+                                                                                 seguido de "HH:MM:SS" en la cadena dateTimeString y el [1] extrae la parte de la hora. */
+                    const fechaCompleta = obtenerFechaDesdeDatetime(dateTimeString);
+                    console.log(fechaCompleta);
+                    console.log(hora);
+
+                    day.textContent = mostrarFecha(fechaCompleta);
+                    clockElement.textContent = hora;
                 } else {
                     throw new Error("Error al obtener la hora local.");
                 }
@@ -108,8 +143,11 @@ updateButton.addEventListener("click", async () => {
                 }
                 console.log(countryName)
                 reemplazarEspaciosEnCapital(countryInfo);
-                const capital = countryInfo.capital;
+                const capital = quitarTildes(countryInfo.capital);
                 console.log(capital);
+                const name = document.getElementById("nombre");
+                name.textContent = countryName;
+                limpiarInput();
                 updateClock(continentName, countryName, capital);
             })
             .catch(error => {
@@ -121,28 +159,3 @@ updateButton.addEventListener("click", async () => {
 });
 
 
-/*
-let latitud = 34.6132;
-let longitud = 58.3772;
-
-
-const API_KEY = "usrxdlax"
-const url = `http://api.geonames.org/countryCodeJSON?lat=${latitud}&lng=${longitud}&username=${API_KEY}`;
-let receivedData;
-
-//console.log(url);
-
-// Realizar solicitud HTTP
-fetch(url)
-    .then(response => response.json())
-    .then(data => {
-        receivedData = data;
-        console.log(receivedData)
-        if (data.countryCode) {
-            console.log(data.countryName);
-        } else {
-            console.error('No se pudo obtener la información del país.');
-        }
-    })
-    .catch(error => console.error('Error en la solicitud:', error));
-*/
