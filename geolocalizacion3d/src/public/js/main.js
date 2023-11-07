@@ -1,8 +1,22 @@
 //CREACION DE ESCENA three.js
 
-import * as THREE from "https://cdn.skypack.dev/three@0.129.0";
+//import * as THREE from "https://cdn.skypack.dev/three@0.129.0";
 import { OrbitControls } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/controls/OrbitControls.js";
+async function loadThreeJS() {
+    try {
+        const module = await import("https://cdn.skypack.dev/three@0.129.0");
+        // El módulo Three.js estará disponible aquí
+        const THREE = module.default;
 
+        // Tu código que utiliza Three.js
+        // ...
+    } catch (error) {
+        console.error("Error al cargar Three.js:", error);
+    }
+}
+
+// Llama a la función para cargar Three.js cuando sea necesario
+loadThreeJS();
 
 const EARTH_RADIUS = 6.371000;
 let scene, camera, renderer, sphere, controls, skybox;
