@@ -2,5 +2,17 @@
   "dependencies": {
     "express": "^4.18.2",
     "three": "^0.158.0"
-  }
+  },
+  "name": "geolocalizacion3d",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "node ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node ./src/index.js"
+  },
+  "author": "Luksm94",
+  "license": "ISC",
+  "description": ""
 }

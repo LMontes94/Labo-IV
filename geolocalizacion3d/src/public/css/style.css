@@ -4,7 +4,7 @@
 }
 
 #c {
-  background: url("./img/space_stars_bg.jpg") no-repeat center center;
+  background: url("../img/space_stars_bg.jpg") no-repeat center center;
   background-size: cover;
 }
 .btn-wrapper {
