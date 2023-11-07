@@ -3,12 +3,11 @@ const app = express();
 const path = require('path');
 
 // Define la carpeta donde se encuentran los archivos estáticos (en este caso, nivel superior)
-app.use(express.static(path.join(__dirname, 'public')));
-console.log(__dirname);
+app.use(express.static(path.join(__dirname, './src/public')));
+
 // Configura una ruta para la página principal
 app.get('/', (req, res) => {
-    //res.sendFile(path.join(__dirname, 'public', 'index.html'));
-    res.send('Hola Mundo')
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Resto de tu configuración...
