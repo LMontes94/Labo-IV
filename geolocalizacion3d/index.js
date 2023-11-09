@@ -7,7 +7,7 @@ app.use(express.static(path.join(__dirname, './src/public')));
 
 // Configura una ruta para la página principal
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, './src/public', 'index.html'));
 });
 
 // Resto de tu configuración...
