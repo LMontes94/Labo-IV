@@ -1,16 +1,22 @@
 {
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.2",
-    "three": "^0.158.0"
+    "save-dev": "^0.0.1-security",
+    "three": "^0.149.0",
+    "vite": "^4.5.0"
   },
   "name": "geolocalizacion3d",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "start": "node index.js"
   },
   "author": "Luksm94",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "@babel/core": "^7.23.3",
+    "@babel/preset-env": "^7.23.3"
+  }
 }
